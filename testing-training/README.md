@@ -54,3 +54,22 @@ Create a jest.config.js file with the following configuration code
     import fetch from 'jest-fetch-mock';
     fetch.enableMocks()
 ```
+
+## Run all tests
+
+```js
+    yarn test 
+```
+
+
+## Run coverage code
+
+```js
+    yarn coverage 
+```
+
+## Run End to End test
+
+```js
+    yarn e2e 
+```

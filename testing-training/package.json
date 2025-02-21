@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "jest",
     "coverage": "yarn test --coverage --watchAll",
-    "cypress:open": "cypress open"
+    "e2e": "cypress open"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",
