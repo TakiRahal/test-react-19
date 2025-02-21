@@ -13,7 +13,11 @@ Currently, two official plugins are available:
 
 ```js
     yarn create vite testing-training --template react-ts
+```
+```js
     yarn add -D jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/user-event @testing-library/dom
+```
+```js
     yarn add -D identity-obj-proxy jest-transformer-svg
 ```
 
