@@ -1,5 +1,5 @@
 export class ResponseError extends Error {
-    constructor(message: string, public response: Response) {
+    constructor(message: string) {
         super(message);
     }
 }

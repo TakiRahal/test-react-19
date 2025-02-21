@@ -1,7 +1,6 @@
 import {render, fireEvent} from "@testing-library/react";
 import {screen} from '@testing-library/dom'
 import Button from "../../../src/components/atomic/button/components/Button";
-import {describe, expect, test} from '@jest/globals';
 
 describe('Button', () => {
     test('renders Button with correct props', () => {

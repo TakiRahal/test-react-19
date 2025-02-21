@@ -9,7 +9,8 @@ const Card = ({title, subTitle, amount, period, features}: CardProps) => {
 
     return (
         <div
-            className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+            data-testid={title}>
             <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
             <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">{subTitle}</p>
             <div className="flex items-baseline justify-center my-8">
@@ -20,7 +21,7 @@ const Card = ({title, subTitle, amount, period, features}: CardProps) => {
             <ul role="list" className="mb-8 space-y-4 text-left">
                 {
                     features.map((item, index) => (
-                        <li className="flex items-center space-x-3" key={index}>
+                        <li className="flex items-center space-x-3" key={index} role='item-list'>
                             <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd"

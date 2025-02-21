@@ -35,9 +35,12 @@ const InputField = ({ref, name, label, placeholder = label, type="text", onChang
                            helpers.setValue(evt.target.value)
                        }
                    }}
-                   data-testid={name}/>
+                   data-testid={name}
+                   data-cy={name}/>
             {
-                hasError && <p className="mt-2 text-sm text-red-600 dark:text-red-500" data-testid={`error-message-${name}`}>{meta.error}</p>
+                hasError && <p className="mt-2 text-sm text-red-600 dark:text-red-500"
+                               data-testid={`error-message-${name}`}
+                               data-cy={`error-message-${name}`}>{meta.error}</p>
             }
         </div>
     )

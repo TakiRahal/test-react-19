@@ -1,13 +1,33 @@
-# React + TypeScript + Vite
+# Testing React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get Testing React in Vite.
 
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Add dependencies : Jest and @testing-library 
+
+
+yarn create vite testing-training --template react-ts
+yarn add -D jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/user-event @testing-library/dom
+yarn add -D identity-obj-proxy jest-transformer-svg
+
+```js
+    Create a jest.setup.ts file with the following code
+    import "@testing-library/jest-dom";
+```
+
+
+
+
+
+
+
+
+
+
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
@@ -69,3 +89,12 @@ Create a jest.config.js file with the following configuration code
         },
         setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
     };
+
+
+
+yarn add --dev jest-fetch-mock
+import fetch from 'jest-fetch-mock';
+fetch.enableMocks()
+
+
+yarn add cypress --dev

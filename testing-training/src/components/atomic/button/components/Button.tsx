@@ -15,7 +15,8 @@ const Button = ({title, className, isLoading, type='button', ref, callback}: But
                 className={className}
                 onClick={callback}
                 disabled={isLoading}
-                data-testid={title}>
+                data-testid={title}
+                data-cy={title?.replace(/\s/g,'')}>
             {
                 isLoading ? <svg aria-hidden="true" role="status"
                                  className="inline w-4 h-4 me-3 text-white animate-spin"

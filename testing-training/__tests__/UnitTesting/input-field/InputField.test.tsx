@@ -3,11 +3,14 @@ import InputField from "../../../src/components/atomic/input-field/components/In
 import {screen} from "@testing-library/dom";
 import {expect} from "@jest/globals";
 
+const setValueMock = jest.fn();
 const field = {
     value: 'Hello World'
 };
 const meta = {};
-const helpers = {};
+const helpers = {
+    setValue: setValueMock
+};
 
 jest.mock("formik", () => ({
     useField: jest.fn(() => {
@@ -57,7 +60,7 @@ describe('Valid InputField', () => {
         expect(inputElement.getAttribute('value')).toEqual(field.value)
     });
 
-    test('should update value InputField', () => {
+    test('should update value InputField with onChange callback', () => {
         // Given
         const name = 'firstName'
         const label = 'Enter your firstname'
@@ -74,5 +77,21 @@ describe('Valid InputField', () => {
 
         // Then
         fireEvent.change(inputElement, {target: {value: newValue}});
+    });
+
+    test('should update value InputField without onChange callback', () => {
+        // Given
+        const name = 'firstName'
+        const label = 'Enter your firstname'
+        const type = 'text'
+        const newValue = 'New Value'
+
+        // When
+        render(<InputField name={name} label={label} type={type}/>)
+        const inputElement = screen.getByTestId(name);
+
+        // Then
+        fireEvent.change(inputElement, {target: {value: newValue}});
+        expect(setValueMock).toHaveBeenCalledWith(newValue);
     });
 })
