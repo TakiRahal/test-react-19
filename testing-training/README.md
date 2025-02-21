@@ -11,9 +11,12 @@ Currently, two official plugins are available:
 ## Add dependencies : Jest and @testing-library 
 
 
-yarn create vite testing-training --template react-ts
-yarn add -D jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/user-event @testing-library/dom
-yarn add -D identity-obj-proxy jest-transformer-svg
+```js
+    yarn create vite testing-training --template react-ts
+    yarn add -D jest @testing-library/react ts-jest @types/jest ts-node @testing-library/jest-dom jest-environment-jsdom @testing-library/user-event @testing-library/dom
+    yarn add -D identity-obj-proxy jest-transformer-svg
+```
+
 
 ```js
     Create a jest.setup.ts file with the following code
