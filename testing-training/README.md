@@ -4,8 +4,8 @@ This template provides a minimal setup to get Testing React in Vite.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [https://jestjs.io/docs/getting-started](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) for Jest
+- [https://testing-library.com/docs/](https://github.com/vitejs/vite-plugin-react-swc) for Testing Library
 
 ## Add dependencies : Jest and @testing-library 
 
