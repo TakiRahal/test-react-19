@@ -4,8 +4,9 @@ This template provides a minimal setup to get Testing React in Vite.
 
 Currently, two official plugins are available:
 
-- [https://jestjs.io/docs/getting-started](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) for Jest
-- [https://testing-library.com/docs/](https://github.com/vitejs/vite-plugin-react-swc) for Testing Library
+- [https://jestjs.io/docs/getting-started](https://jestjs.io/docs/getting-started) for Jest
+- [https://testing-library.com/docs/](https://testing-library.com/docs/) for Testing Library
+- [https://docs.cypress.io/app/references/configuration](https://docs.cypress.io/app/references/configuration) for Cypress
 
 ## Add dependencies : Jest and @testing-library 
 
