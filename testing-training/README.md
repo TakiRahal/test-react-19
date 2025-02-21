@@ -41,7 +41,11 @@ Create a jest.config.js file with the following configuration code
 
 
 ## Add dependencies mock fetch
-yarn add --dev jest-fetch-mock
+
+```js
+    yarn add --dev jest-fetch-mock
+```
+
 ```js
     import fetch from 'jest-fetch-mock';
     fetch.enableMocks()
