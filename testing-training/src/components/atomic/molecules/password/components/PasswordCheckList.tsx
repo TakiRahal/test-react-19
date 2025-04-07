@@ -22,7 +22,7 @@ const PasswordCheckList = ({name}: PasswordCheckListProps): React.JSX.Element =>
     return (
       <>
           {!allValid && hasError && (
-              <ul className="mt-2 text-sm" data-testid={'list-requirements-password'}>
+              <ul className="mt-2 text-sm" data-testid="list-requirements-password" data-cy="list-requirements-password">
                   <li className={hasOneDigit ? "text-green-500" : "text-red-500"}>
                       {hasOneDigit ? '✔' : '❌'} One Digit from 1 to 9
                   </li>
