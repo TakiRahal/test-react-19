@@ -1,0 +1,3 @@
+*) jest.fn() vs jest.spyOn(): https://stackoverflow.com/questions/57643808/what-is-the-difference-between-jest-fn-and-jest-spyon-methods-in-jest
+	To my understanding the only difference is that YOU CAN RESTORE ORIGINAL FUNCTION with jest.spyOn and you can't with jest.fn
+	

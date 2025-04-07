@@ -4,6 +4,7 @@ import InputField from "../../../components/atomic/input-field/components/InputF
 import Button from "../../../components/atomic/button/components/Button";
 import {Link} from "react-router";
 import {SignInForm} from "../types/signin.type";
+import Password from "../../../components/atomic/molecules/password/components/Password";
 
 type SignInFormProps = {
     isPending: boolean,
@@ -30,7 +31,7 @@ const SignInFormAction = ({isPending, onSubmit}: SignInFormProps) => {
                       }) => (
                         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                             <InputField name={"email"} label={"Your email"} type={"email"}/>
-                            <InputField name={"password"} label={"Your password"} type={"password"}/>
+                            <Password name={"password"} label={"Your password"}/>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start" data-testid={'remember-me'}>
                                     <div className="flex items-center h-5">

@@ -1,16 +1,14 @@
-import {render} from "@testing-library/react";
-import App from "../../src/App";
-import {screen} from "@testing-library/dom";
-import {BrowserRouter} from "react-router";
 
 describe('findByText Examples', () => {
-    test('should exist header components', () => {
-        // // Given
-        //
-        // // When
-        // render(<BrowserRouter><App/></BrowserRouter>)
-        //
-        // // Then
+    test('should exist header components', async () => {
+        // Given
+
+        // When
+        // await act (async () => {
+        //     render(<BrowserRouter><App /></BrowserRouter>)
+        // });
+
+        // Then
         // const headerElement = screen.getByTestId('header');
         // expect(headerElement).toBeDefined()
         //

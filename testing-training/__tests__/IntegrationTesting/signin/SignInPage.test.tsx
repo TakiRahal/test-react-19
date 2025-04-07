@@ -5,11 +5,11 @@ import {screen} from "@testing-library/dom";
 import SignInFormAction from "../../../src/modules/signin/components/SignInFormAction";
 
 const queryClient = new QueryClient();
-const onSubmit = jest.fn()
 
 describe('SignInPage', () => {
     test('check all exist required fields SignInPage', () => {
         // Given
+        const onSubmit = jest.fn()
 
         // When
         render(
@@ -43,6 +43,7 @@ describe('SignInPage', () => {
 
     test('check validation message empty fields SignInPage', async () => {
         // Given
+        const onSubmit = jest.fn()
 
         // When
         render(
@@ -56,18 +57,47 @@ describe('SignInPage', () => {
         });
 
         // Then
-        const invalidEmail = screen.getByText('Email is valid');
+        const invalidEmail = screen.getByText('Email is required');
         expect(invalidEmail).toBeDefined()
 
-        const invalidPassword = screen.getByText('Password is valid');
+        const invalidPassword = screen.getByText('Password is required');
         expect(invalidPassword).toBeDefined()
 
+    })
+
+    test('check invalidation password SignInPage', async () => {
+        // Given
+        const onSubmit = jest.fn()
+        const email = "taki@rahal.tn"
+        const password = " "
+
+        // When
+        render(
+            <QueryClientProvider client={queryClient}>
+                <BrowserRouter><SignInFormAction isPending={false} onSubmit={onSubmit} /></BrowserRouter>
+            </QueryClientProvider>
+        )
+        await act(async () => {
+            const emailElement = screen.getByTestId('email');
+            fireEvent.change(emailElement, {target: {value: email}});
+
+            const passwordElement = screen.getByTestId('password');
+            fireEvent.change(passwordElement, {target: {value: password}});
+
+            const submitElement = screen.getByText('Sign in');
+            fireEvent.click(submitElement);
+        });
+
+        // Then
+        const listRequirementsPassword: HTMLUListElement = screen.getByTestId('list-requirements-password');
+        expect(listRequirementsPassword.children.length).toEqual(6)
     })
 
 
     test('Should be redirect to signup route', async () => {
         // Give
         const pathSignUp = '/signup'
+        const onSubmit = jest.fn()
 
         // When
         render(
@@ -85,7 +115,8 @@ describe('SignInPage', () => {
     test("calls onSubmit when form is submitted", async () => {
         // Given
         const email = "taki@rahal.tn"
-        const password = "rahal"
+        const password = "Taki@2025"
+        const onSubmit = jest.fn()
 
         // When
         render(

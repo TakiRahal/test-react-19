@@ -14,7 +14,7 @@ export const loginUser = async (email: string, password: string) => {
         body: JSON.stringify({ email, password })
     })
     if (!response.ok)
-        throw new ResponseError('Failed on sign in request', response);
+        throw new ResponseError('Failed on sign in request'+ response);
     return await response.json();
 };
 

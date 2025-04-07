@@ -11,12 +11,12 @@ const ForgotPagePage = lazy(() => import('../../../modules/forgot-password/compo
 const RoutesApp = () => {
   return (
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="marketplace" element={<MarketPlacePage/>}/>
-        <Route path="signin" element={<SignInPage/>}/>
-        <Route path="signup" element={<SignUpPage/>}/>
-        <Route path="about" element={<AboutPage/>}/>
-        <Route path="forgot-password" element={<ForgotPagePage/>}/>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="marketplace" element={<MarketPlacePage/>}/>
+          <Route path="signin" element={<SignInPage/>}/>
+          <Route path="signup" element={<SignUpPage/>}/>
+          <Route path="about" element={<AboutPage/>}/>
+          <Route path="forgot-password" element={<ForgotPagePage/>}/>
       </Routes>
   )
 }
