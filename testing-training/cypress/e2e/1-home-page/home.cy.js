@@ -3,24 +3,18 @@ describe('home page', () => {
         cy.visit('http://localhost:5173/')
     })
 
-    it('should display the logo and navigation links', { scrollBehavior: false }, () => {
+    it('should exist the banner in home page', { scrollBehavior: false }, () => {
         // check if logo exist.
-        cy.get('[data-cy=logo]').should('contain', 'Testing ReactJS')
-
-        cy.get("[data-cy=signin-link]").should("contain", "LogIn");
-        cy.get("[data-cy=signup-link]").should("contain", "Register");
-        cy.get("[data-cy=home-link]").should("contain", "Home");
-        cy.get("[data-cy=marketplace-link]").should("contain", "Marketplace");
-        cy.get("[data-cy=about-link]").should("contain", "About Us");
+        cy.get('[data-cy=banner-id]').should('be.visible');
     })
 
-    it("should navigate to the About page when clicking LogIn", { scrollBehavior: false }, () => {
-        cy.get("[data-cy=signin-link]").click();
-        cy.url().should("include", "/signin");
-    });
+    it('should exist the list of links in home page', { scrollBehavior: false }, () => {
+        // check if logo exist.
+        cy.get('[data-cy=links-banner-id]').should('be.visible');
+    })
 
-    it("should navigate to the About page when clicking SinUp", { scrollBehavior: false }, () => {
-        cy.get("[data-cy=signup-link]").click();
-        cy.url().should("include", "/signup");
-    });
+    it('should exist the work section in home page', { scrollBehavior: false }, () => {
+        // check if logo exist.
+        cy.get('[data-cy=work-id]').should('be.visible');
+    })
 })

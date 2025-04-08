@@ -13,7 +13,7 @@ const HomePage = () => {
                 buttonFigma={'Get Figma file'}
                 srcImg={hero}/>
 
-            <section className="bg-white dark:bg-gray-900">
+            <section className="bg-white dark:bg-gray-900" data-cy={"links-banner-id"}>
                 <div className="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
                     <div
                         className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
@@ -147,7 +147,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="bg-gray-50 dark:bg-gray-800">
+            <section className="bg-gray-50 dark:bg-gray-800" data-cy={"work-id"}>
                 <div className="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
 
                     <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">

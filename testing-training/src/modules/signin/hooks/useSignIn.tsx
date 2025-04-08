@@ -21,12 +21,12 @@ const useSignIn = ()=> {
         return await response.json();
     };
 
-    const addMutation = useMutation({
+    const loginMutation = useMutation({
         mutationFn: (values: SignInForm) => loginUser(values.email, values.password),
         onSuccess: () => queryClient.invalidateQueries({ queryKey: [QUERY_KEY.user] }),
         onError: () => queryClient.invalidateQueries({ queryKey: [QUERY_KEY.user] }),
     })
 
-    return {addMutation}
+    return {loginMutation}
 }
 export default useSignIn

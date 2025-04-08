@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -133,40 +133,38 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,6 +209,7 @@ import InputField from "../../../components/atomic/input-field/components/InputF
 import Button from "../../../components/atomic/button/components/Button";
 import {Link} from "react-router";
 import {SignInForm} from "../types/signin.type";
+import Password from "../../../components/atomic/molecules/password/components/Password";
 &nbsp;
 type SignInFormProps = {
     isPending: boolean,
@@ -236,9 +235,8 @@ const SignInFormAction = ({isPending, onSubmit}: SignInFormProps) =&gt; {
                           handleSubmit,
                       }) =&gt; (
                         &lt;form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}&gt;
-                            &lt;InputField name={"email"} label={"Your email"} type={"email"} data-testid={'email'}/&gt;
-                            &lt;InputField name={"password"} label={"Your password"} type={"password"}
-                                        data-testid={'password'}/&gt;
+                            &lt;InputField name={"email"} label={"Your email"} type={"email"}/&gt;
+                            &lt;Password name={"password"} label={"Your password"}/&gt;
                             &lt;div className="flex items-center justify-between"&gt;
                                 &lt;div className="flex items-start" data-testid={'remember-me'}&gt;
                                     &lt;div className="flex items-center h-5"&gt;
@@ -251,16 +249,15 @@ const SignInFormAction = ({isPending, onSubmit}: SignInFormProps) =&gt; {
                                         &lt;/label&gt;
                                     &lt;/div&gt;
                                 &lt;/div&gt;
-                                &lt;a href="#"
+                                &lt;Link to="/forgot-password"
                                    className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                                    data-testid={'forgot-password'}&gt;Forgot
-                                    password?&lt;/a&gt;
+                                    password?&lt;/Link&gt;
                             &lt;/div&gt;
                             &lt;Button title={'Sign in'}
                                     type="submit"
                                     className="bg-stone-900 w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                                    isLoading={isPending}
-                            /&gt;
+                                    isLoading={isPending}/&gt;
                             &lt;p className="text-sm font-light text-gray-500 dark:text-gray-400"
                                data-testid={'signup'}&gt;
                                 Don’t have an account yet?
@@ -283,7 +280,7 @@ export default SignInFormAction
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-20T11:05:22.931Z
+                at 2025-04-07T14:33:04.793Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

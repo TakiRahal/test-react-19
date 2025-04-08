@@ -1,5 +1,4 @@
 const AboutUsPage = () => {
-
     return (
         <div className="flex flex-col justify-center px-6 md:h-screen">
             <section className="mb-7">

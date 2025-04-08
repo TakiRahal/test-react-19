@@ -1,0 +1,35 @@
+What is the primary purpose of Jest in a React project?
+A. Styling components
+B. Managing state
+C. Testing JavaScript code
+D. Routing between pages
+ANSWER: C
+
+Which function is used to render a React component in Jest tests with React Testing Library?
+A. renderComponent()
+B. mount()
+C. render()
+D. create()
+ANSWER: C
+
+
+What does the jest.fn() method do?
+A. Runs a real function
+B. Mocks a function
+C. Spies on DOM elements
+D. Creates a CSS class
+ANSWER: B
+
+What is the purpose of @testing-library/jest-dom?
+A. Testing asynchronous functions
+B. Providing custom Jest matchers for the DOM
+C. Mocking API calls
+D. Adding CSS to test files
+ANSWER: B
+
+In a test, what does getByText('Submit') do?
+A. Submits a form
+B. Finds an element containing the text "Submit"
+C. Adds a text node
+D. Mocks the text content
+ANSWER: B

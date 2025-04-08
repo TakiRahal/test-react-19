@@ -20,9 +20,9 @@ describe('useSignIn', () => {
         });
 
         // Then
-        expect(result.current.addMutation.isPending).toBeFalsy()
-        expect(result.current.addMutation.isSuccess).toBeFalsy()
-        expect(result.current.addMutation.isError).toBeFalsy()
+        expect(result.current.loginMutation.isPending).toBeFalsy()
+        expect(result.current.loginMutation.isSuccess).toBeFalsy()
+        expect(result.current.loginMutation.isError).toBeFalsy()
     })
 
 
@@ -43,7 +43,7 @@ describe('useSignIn', () => {
         });
 
         // Then
-        result.current.addMutation.mutate(values, {
+        result.current.loginMutation.mutate(values, {
             onSuccess: (data) => {
                 console.log('success here', data)
                 expect(data.email).toEqual(email)
@@ -69,7 +69,7 @@ describe('useSignIn', () => {
         });
 
         // Then
-        result.current.addMutation.mutate(values, {
+        result.current.loginMutation.mutate(values, {
             onError: (err) => {
                 expect(err).toEqual(responseError)
             }
