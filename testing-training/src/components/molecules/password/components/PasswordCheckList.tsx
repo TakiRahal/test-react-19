@@ -1,4 +1,5 @@
 import {useField} from "formik";
+import {PasswordFeatures} from "../../../../utils/PasswordFeatures";
 
 type PasswordCheckListProps = {
     name: string
@@ -24,22 +25,22 @@ const PasswordCheckList = ({name}: PasswordCheckListProps): React.JSX.Element =>
           {!allValid && hasError && (
               <ul className="mt-2 text-sm" data-testid="list-requirements-password" data-cy="list-requirements-password">
                   <li className={hasOneDigit ? "text-green-500" : "text-red-500"}>
-                      {hasOneDigit ? '✔' : '❌'} One Digit from 1 to 9
+                      {hasOneDigit ? '✔' : '❌'} {PasswordFeatures[0]}
                   </li>
                   <li className={hasLowercase ? "text-green-500" : "text-red-500"}>
-                      {hasLowercase ? '✔' : '❌'} One lowercase letter
+                      {hasLowercase ? '✔' : '❌'} {PasswordFeatures[1]}
                   </li>
                   <li className={hasUppercase ? "text-green-500" : "text-red-500"}>
-                      {hasUppercase ? '✔' : '❌'} One uppercase letter
+                      {hasUppercase ? '✔' : '❌'} {PasswordFeatures[2]}
                   </li>
                   <li className={hasSpecialChar ? "text-green-500" : "text-red-500"}>
-                      {hasSpecialChar ? '✔' : '❌'} One special character
+                      {hasSpecialChar ? '✔' : '❌'} {PasswordFeatures[3]}
                   </li>
                   <li className={hasNoSpace ? "text-green-500" : "text-red-500"}>
-                      {hasNoSpace ? '✔' : '❌'} Has no space
+                      {hasNoSpace ? '✔' : '❌'} {PasswordFeatures[4]}
                   </li>
                   <li className={hasValidLength ? "text-green-500" : "text-red-500"}>
-                      {hasValidLength ? '✔' : '❌'} It must be 8-16 characters long
+                      {hasValidLength ? '✔' : '❌'} {PasswordFeatures[5]}
                   </li>
               </ul>
           )}

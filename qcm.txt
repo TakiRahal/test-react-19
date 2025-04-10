@@ -33,3 +33,45 @@ B. Finds an element containing the text "Submit"
 C. Adds a text node
 D. Mocks the text content
 ANSWER: B
+
+What is the main purpose of Cypress in a React.js project?
+A. Managing React state
+B. Writing backend unit tests
+C. Performing end-to-end tests in the browser
+D. Styling React components
+ANSWER: C
+
+Which Cypress command is used to select a DOM element?
+A. cy.choose()
+B. cy.get()
+C. cy.find()
+D. cy.select()
+ANSWER: B
+
+In Cypress, what does the cy.visit() command do?
+A. Visits a component's state
+B. Launches the dev server
+C. Navigates to a given URL in the browser
+D. Connects to a database
+ANSWER: C
+
+Which of the following assertions is valid in Cypress?
+A. expect(element).visible();
+B. cy.element().should('appear')
+C. cy.get('.item').should('be.visible')
+D. cy.get('.item').expectToBeVisible()
+ANSWER: C
+
+In a React app, what’s the best practice for selecting elements in Cypress tests?
+A. Use class names (.my-class)
+B. Use element IDs (#id)
+C. Use data-testid or data-cy attributes
+D. Use inline styles
+ANSWER: C
+
+Which file is commonly used to configure Cypress?
+A. cypress.config.js
+B. cypress.env.json
+C. cypress.json
+D. All of the above
+ANSWER: D

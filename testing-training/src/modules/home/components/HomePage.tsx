@@ -1,5 +1,5 @@
 import hero from '../../../assets/images/hero.png'
-import Card from "../../../components/atomic/card/components/Card.tsx";
+import Card from "../../../components/atoms/card/components/Card.tsx";
 import Banner from "./Banner.tsx";
 import feature from '../../../assets/images/feature-1.png'
 import feature2 from '../../../assets/images/feature-2.png'

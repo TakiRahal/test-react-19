@@ -1,4 +1,4 @@
-import InputField from "../../../input-field/components/InputField";
+import InputField from "../../../atoms/input-field/components/InputField";
 import PasswordCheckList from "./PasswordCheckList";
 
 type PasswordProps = {

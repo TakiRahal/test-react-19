@@ -2,6 +2,7 @@ import {renderHook} from "@testing-library/react";
 import useSignIn from "../../../src/modules/signin/hooks/useSignIn";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import { FetchMock } from 'jest-fetch-mock';
+import {responseError} from "../../../src/utils/PasswordFeatures";
 const fetchMock = fetch as FetchMock;
 
 const queryClient = new QueryClient();
@@ -45,7 +46,6 @@ describe('useSignIn', () => {
         // Then
         result.current.loginMutation.mutate(values, {
             onSuccess: (data) => {
-                console.log('success here', data)
                 expect(data.email).toEqual(email)
             }
         });
@@ -54,7 +54,6 @@ describe('useSignIn', () => {
 
     test('loginUser should throw an error log in', async () => {
         // Given
-        const responseError = 'ResponseError: Failed on sign in request'
         const email = "taki@rahal.tn"
         const password = "rahal"
         const values = {
@@ -71,7 +70,7 @@ describe('useSignIn', () => {
         // Then
         result.current.loginMutation.mutate(values, {
             onError: (err) => {
-                expect(err).toEqual(responseError)
+                expect(err.message).toEqual(responseError)
             }
         });
     })

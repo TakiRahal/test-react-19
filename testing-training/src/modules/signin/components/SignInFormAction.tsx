@@ -1,10 +1,10 @@
 import {Formik} from "formik";
 import {signInInitialValues, signInSchema} from "../schema/signin.schema";
-import InputField from "../../../components/atomic/input-field/components/InputField";
-import Button from "../../../components/atomic/button/components/Button";
+import InputField from "../../../components/atoms/input-field/components/InputField";
+import Button from "../../../components/atoms/button/components/Button";
 import {Link} from "react-router";
 import {SignInForm} from "../types/signin.type";
-import Password from "../../../components/atomic/molecules/password/components/Password";
+import Password from "../../../components/molecules/password/components/Password";
 
 type SignInFormProps = {
     isPending: boolean,
@@ -20,7 +20,7 @@ const SignInFormAction = ({isPending, onSubmit}: SignInFormProps) => {
                     Sign in to your account
                 </h1>
                 {isPending &&
-                    <p className={"mt-2 text-sm text-red-600 dark:text-red-500"}>isLoading ...</p>}
+                    <p className={"mt-2 text-sm text-red-600 dark:text-red-500"} data-testid={'spinner'}>isLoading ...</p>}
                 <Formik
                     initialValues={signInInitialValues}
                     validationSchema={signInSchema}
@@ -57,8 +57,9 @@ const SignInFormAction = ({isPending, onSubmit}: SignInFormProps) => {
                                data-testid={'signup'}>
                                 Don’t have an account yet?
                                 <Link to="/signup"
-                                      className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
-                                    up</Link>
+                                      className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+                                    Sign up
+                                </Link>
                             </p>
                         </form>
                     )}

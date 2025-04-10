@@ -2,6 +2,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {ResponseError} from "../../../utils/ResponseError";
 import {QUERY_KEY} from "../../../config/queryKeys";
 import {SignInForm} from "../types/signin.type";
+import {responseError} from "../../../utils/PasswordFeatures";
 
 
 const useSignIn = ()=> {
@@ -17,7 +18,7 @@ const useSignIn = ()=> {
             body: JSON.stringify({ email, password })
         })
         if (!response.ok)
-            throw new ResponseError('Failed on sign in request');
+            throw new ResponseError(responseError);
         return await response.json();
     };
 

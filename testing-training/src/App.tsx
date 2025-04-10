@@ -1,9 +1,9 @@
 import {Suspense} from 'react'
 import './App.css'
-import Header from "./components/template/header/components/Header";
+import Header from "./components/templates/header/components/Header";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import RoutesApp from "./config/routes/components/RoutesApp";
-import Footer from "./components/template/footer/Footer";
+import Footer from "./components/templates/footer/Footer";
 
 // Create a client
 const queryClient = new QueryClient()

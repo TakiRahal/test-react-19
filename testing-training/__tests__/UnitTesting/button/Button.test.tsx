@@ -1,6 +1,6 @@
 import {render, fireEvent} from "@testing-library/react";
 import {screen} from '@testing-library/dom'
-import Button from "../../../src/components/atomic/button/components/Button";
+import Button from "../../../src/components/atoms/button/components/Button";
 
 describe('Button', () => {
     test('renders Button with correct props', () => {
@@ -17,20 +17,19 @@ describe('Button', () => {
         expect(buttonElement).toBeDefined();
     });
 
-
-    test("calls onClick when clicked", () => {
+    test("should show loader and hide title when isLoading", () => {
         // Given
         const title = 'Click Me'
         const className = 'w-full'
-        const handleClick = jest.fn();
+        const isLoading = true
 
         // When
-        render(<Button title={title} className={className} callback={handleClick}/>);
+        render(<Button title={title} className={className} isLoading={isLoading}/>);
 
         // Then
-        const buttonElement = screen.getByText(title);
-        fireEvent.click(buttonElement);
-        expect(handleClick).toHaveBeenCalledTimes(1);
+        const iconButton = screen.getByTestId(`icon-${title}`);
+        expect(iconButton).toBeDefined()
+        expect(screen.queryByText(title)).toBeNull()
     });
 
     test("should disabled when isLoading", () => {
@@ -45,9 +44,26 @@ describe('Button', () => {
         // Then
         const buttonElement = screen.getByTestId(title);
         expect(buttonElement).toHaveProperty('disabled', true);
+
+
         fireEvent.click(buttonElement);
         expect(handleClick).not.toHaveBeenCalledTimes(1);
         const iconButton = screen.getByTestId(`icon-${title}`);
         expect(iconButton).toBeDefined()
+    });
+
+    test("calls onClick when clicked", () => {
+        // Given
+        const title = 'Click Me'
+        const className = 'w-full'
+        const handleClick = jest.fn();
+
+        // When
+        render(<Button title={title} className={className} callback={handleClick}/>);
+
+        // Then
+        const buttonElement = screen.getByText(title);
+        fireEvent.click(buttonElement);
+        expect(handleClick).toHaveBeenCalledTimes(1);
     });
 })

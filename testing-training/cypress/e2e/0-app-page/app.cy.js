@@ -1,6 +1,7 @@
 describe('app page', () => {
     beforeEach(() => {
         cy.visit('http://localhost:5173/')
+        cy.wait(3000);
     })
 
     it('should display the logo and navigation links', () => {
@@ -15,7 +16,7 @@ describe('app page', () => {
         cy.wait(3000);
     })
 
-    it("should navigate to the About page when clicking LogIn", () => {
+    it("should navigate to the Sign page when clicking LogIn", () => {
         cy.get("[data-cy=signin-link]").click();
         cy.url().should("include", "/signin");
         cy.wait(3000);
@@ -32,4 +33,11 @@ describe('app page', () => {
         cy.url().should("include", "/marketplace");
         cy.wait(3000);
     });
+
+    it('should exist footer', () => {
+        // check if footer exist.
+        cy.get("[data-cy=footer-id]").should("be.visible");
+        cy.get('[data-cy=title-footer-id]').should('contain', 'Testing ReactJS')
+        cy.wait(3000);
+    })
 })

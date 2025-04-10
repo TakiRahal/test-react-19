@@ -38,7 +38,23 @@ describe('SignInPage', () => {
         expect(submitElement).toBeDefined()
 
         const signUpElement = screen.getByTestId('signup');
-        expect(signUpElement).toBeDefined()
+        expect(signUpElement).toBeDefined();
+    })
+
+    test('check loader spinner with isPending', () => {
+        // Given
+        const onSubmit = jest.fn()
+
+        // When
+        render(
+            <QueryClientProvider client={queryClient}>
+                <BrowserRouter><SignInFormAction isPending={true} onSubmit={onSubmit} /></BrowserRouter>
+            </QueryClientProvider>
+        )
+
+        // Then
+        const spinnerElement = screen.getByTestId('spinner');
+        expect(spinnerElement).toBeDefined()
     })
 
     test('check validation message empty fields SignInPage', async () => {
@@ -58,10 +74,10 @@ describe('SignInPage', () => {
 
         // Then
         const invalidEmail = screen.getByText('Email is required');
-        expect(invalidEmail).toBeDefined()
+        expect(invalidEmail).toBeDefined();
 
         const invalidPassword = screen.getByText('Password is required');
-        expect(invalidPassword).toBeDefined()
+        expect(invalidPassword).toBeDefined();
 
     })
 

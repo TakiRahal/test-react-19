@@ -1,6 +1,6 @@
 import {screen} from '@testing-library/dom'
 import {render} from "@testing-library/react";
-import Card from "../../../src/components/atomic/card/components/Card";
+import Card from "../../../src/components/atoms/card/components/Card";
 
 describe('Card', () => {
     test('renders Card with correct props', () => {
@@ -35,6 +35,7 @@ describe('Card', () => {
         const subTitleElement = screen.getByText(subTitle);
         const amountElement = screen.getByText(`$${amount}`);
         const periodElement = screen.getByText(`/${period}`);
+        const buttonElement = screen.getByText('Get started')
 
         // Then
         expect(cardElement).toBeDefined();
@@ -42,6 +43,7 @@ describe('Card', () => {
         expect(subTitleElement.textContent).toEqual(subTitle)
         expect(amountElement.textContent).toEqual(`$${amount}`)
         expect(periodElement.textContent).toEqual(`/${period}`)
+        expect(buttonElement).toBeDefined();
     })
 
     test('should exist all items of list Card', () => {

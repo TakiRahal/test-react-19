@@ -2,7 +2,7 @@ import {RefObject} from "react";
 
 type ButtonProps = {
     title: string
-    className: string
+    className?: string
     isLoading?: boolean
     type?: "button" | "submit" | "reset"
     callback?: () => void
@@ -16,7 +16,7 @@ const Button = ({title, className, isLoading, type='button', ref, callback}: But
                 onClick={callback}
                 disabled={isLoading}
                 data-testid={title}
-                data-cy={title?.replace(/\s/g,'')}>
+                data-cy={title.replace(/\s/g,'')}>
             {
                 isLoading ? <svg aria-hidden="true" role="status"
                                  className="inline w-4 h-4 me-3 text-white animate-spin"

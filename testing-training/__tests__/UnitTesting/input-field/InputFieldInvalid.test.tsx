@@ -1,5 +1,5 @@
 import {render} from "@testing-library/react";
-import InputField from "../../../src/components/atomic/input-field/components/InputField";
+import InputField from "../../../src/components/atoms/input-field/components/InputField";
 import {screen} from "@testing-library/dom";
 import {expect} from "@jest/globals";
 

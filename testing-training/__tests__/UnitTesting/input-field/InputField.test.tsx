@@ -1,5 +1,5 @@
 import {render, fireEvent} from "@testing-library/react";
-import InputField from "../../../src/components/atomic/input-field/components/InputField";
+import InputField from "../../../src/components/atoms/input-field/components/InputField";
 import {screen} from "@testing-library/dom";
 import {expect} from "@jest/globals";
 
@@ -71,6 +71,7 @@ describe('Valid InputField', () => {
         const handleChange = (data: string) => {
             expect(data).toEqual(newValue)
         }
+
         // When
         render(<InputField name={name} label={label} type={type} onChange={handleChange}/>)
         const inputElement = screen.getByTestId(name);
